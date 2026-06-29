@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACG01 最新入口 · 永久发布页</title>
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;background:#0e0f1a;color:#e8e8f0;
+ min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:32px 18px 48px}
+h1{font-size:22px;font-weight:800;margin-bottom:6px;letter-spacing:1px;
+ background:linear-gradient(90deg,#7c5cff,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-size:13px;color:#9aa0b5;margin-bottom:22px;text-align:center;line-height:1.6}
+.tip{background:#1a1b2e;border:1px solid #2a2c45;border-radius:12px;padding:12px 14px;font-size:13px;
+ color:#c7cbe0;max-width:460px;width:100%;margin-bottom:18px;line-height:1.7}
+.tip b{color:#22d3ee}
+.list{width:100%;max-width:460px;display:flex;flex-direction:column;gap:12px}
+a.dom{display:flex;align-items:center;justify-content:space-between;text-decoration:none;
+ background:linear-gradient(135deg,#1c1d33,#191a2b);border:1px solid #2f3150;border-radius:14px;
+ padding:16px 18px;color:#fff;font-size:17px;font-weight:600;transition:.15s;letter-spacing:.5px}
+a.dom:active{transform:scale(.98)}
+a.dom .go{font-size:13px;font-weight:700;color:#0e0f1a;background:linear-gradient(90deg,#7c5cff,#22d3ee);
+ padding:6px 14px;border-radius:8px}
+.idx{color:#6b6f8c;font-size:13px;margin-right:10px;font-weight:700}
+.foot{margin-top:26px;font-size:12px;color:#6b6f8c;text-align:center;line-height:1.8}
+.copy{margin-top:8px;font-size:12px;color:#22d3ee;cursor:pointer}
+</style>
+</head>
+<body>
+<h1>ACG01 最新入口</h1>
+<div class="sub">收藏本页 ⭐ 任何一个网址打不开,就点下一个 —— 总有一个能进</div>
+<div class="tip">📌 <b>使用说明</b>:下面每个都是可以直接进入网站的地址。<br>
+① 点任意一个直接打开;② 打不开就换下一个;③ 建议把本页加入收藏夹,域名永远在这里更新。<br>
+⚠️ 用手机自带浏览器(Chrome/Safari)打开最稳,<b>微信/QQ 内打不开请点右上角「在浏览器打开」</b>。</div>
+<div class="list" id="list"></div>
+<div class="foot">本页地址固定不变 · 域名实时更新<br><span class="copy" id="cp">📋 复制全部网址</span></div>
+<script>
+// 域名清单 (服务端脚本自动刷新, 只保留当前能直连进站的)
+var DOMAINS = ["aigame01.top","hsteam6.com","hsteam3.com","h-steam.com"];
+var L=document.getElementById('list');
+DOMAINS.forEach(function(d,i){
+  var a=document.createElement('a');a.className='dom';a.href='https://'+d+'/';a.rel='noopener';
+  a.innerHTML='<span><span class="idx">'+(i+1)+'</span>'+d+'</span><span class="go">进入 →</span>';
+  L.appendChild(a);
+});
+document.getElementById('cp').onclick=function(){
+  var t=DOMAINS.map(function(d){return 'https://'+d;}).join('\n');
+  navigator.clipboard&&navigator.clipboard.writeText(t);this.textContent='✅ 已复制';
+};
+</script>
+</body>
+</html>
